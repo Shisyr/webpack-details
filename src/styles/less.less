@@ -1,0 +1,51 @@
+@border: 1px solid #ccc;
+
+.box {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: @border;
+  h2 {
+    text-align: center;
+    color: darkblue;
+  }
+}
+
+.href {
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: 800;
+  color: royalblue;
+  overflow: hidden;
+  text-decoration: underline;
+  &::before {
+    position: absolute;
+    content: attr(data-content);
+    top: 0;
+    left: 0;
+    color: red;
+    text-decoration: underline;
+    overflow: hidden;
+    transition: width 275ms ease;
+    width: 0;
+    white-space: nowrap;
+    //&:hover {
+    //  width: 100%;
+    //}
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  //background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  //-webkit-background-clip: text;
+  //-webkit-text-fill-color: transparent;
+  //background-size: 200% 100%;
+  //background-position: 100%;
+  //transition: background-position 275ms ease;
+  //text-decoration: none; // text decorations are clipped in WebKit browsers
+  //&:hover {
+  //  background-position: 0 100%;
+  //}
+}
